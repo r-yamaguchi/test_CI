@@ -111,7 +111,7 @@ class ViewController: UIViewController {
     
     // WiFi接続認証通信
     func wi2Login() {
-        let login_params = ["username": "wi2test023", "password": "wi2test999"]
+        let login_params = ["username": "xxxxxx", "password": "xxxxxx"]
         let parameters: [String: Any] = [
             "login_method": "username",
             "login_params": login_params
@@ -140,12 +140,7 @@ class ViewController: UIViewController {
             let header  = HTTPCookie.requestHeaderFields(with: cookies!)
             print("header: \(header as Any)")
             
-            Alamofire.request( AUTH_URL,
-                               method: .post,
-                               parameters: parameters,
-                               encoding: JSONEncoding.default,
-                               headers: header
-                )
+            Alamofire.request( AUTH_URL, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: header)
                 .responseJSON { response in
                     print("Response: \(response.response as Any)") // HTTP URL response
                     print("Data: \(response.data as Any)")     // server data
